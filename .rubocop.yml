@@ -1,0 +1,99 @@
+require: rubocop-sketchup
+
+AllCops:
+  DisplayCopNames: true
+  Exclude:
+    - 'src/*/vendor/**/*'
+  SketchUp:
+    TargetSketchUpVersion: 2014
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+# Short lines are in general good for readability but splitting up one
+# expression into multiple lines can be less readable. Aim for 80 chars but
+# allow 120.
+Metrics/LineLength:
+  Max: 120
+
+# This is a rather quick and dirty extension, not following all Ruby best
+# practices.
+Metrics/MethodLength:
+  Enabled: false
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Layout/IndentArray:
+  EnforcedStyle: consistent
+Layout/IndentHash:
+  EnforcedStyle: consistent
+
+# Line endings should be handled by the Git client. What line endings are used
+# while editing is irrelevant.
+Layout/EndOfLine:
+  Enabled: false
+
+# Use wrapping empty lines in modules containing methods (the first and last
+# method should have the same spacing to the module as there are between
+# methods).
+#
+# Don't however use wrapping empty lines for a module that merely wraps another
+# module.
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: false
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+
+# The general rule is to have 2 spaces as indentation. However, if a module
+# merely wraps one single element (e.g. another module or class) the indentation
+# can be ignored to reduce line length.
+Layout/IndentationWidth:
+  IgnoredPatterns:
+    - '^\s*module'
+
+Style/Documentation:
+  Enabled: false
+
+# Double negation is a handy Ruby idiom to assure a value is a boolean, as there
+# is no to_bool/to_boolean/to_b method. What the cop suggest, !var.nil?, doesn't
+# even cater for boolean false as input.
+Style/DoubleNegation:
+  Enabled: false
+
+# Suggest making lines way longer than the recommended line max length of 80
+# chars. See https://github.com/rubocop-hq/rubocop/issues/6149.
+Style/IfUnlessModifier:
+  Enabled: false
+
+# Always use double quotes for text used in UI to avoid having to switch
+# between single and double quites when interpolation is added to existing
+# string.
+Style/StringLiterals:
+  Enabled: false
+
+# Conflict too often with Metric/LineLength.
+Style/GuardClause:
+  Enabled: false
+
+Style/NumericPredicate:
+  Enabled: false
+
+# For Array-like objects the code gets more readable when using `empty?` rather
+# than `length == 0`. However, Vector3ds don't have a empty? method.
+Style/ZeroLengthPredicate:
+  Enabled: false
+
+SketchupDeprecations:
+  Enabled: true
+
+SketchupPerformance:
+  Enabled: true
+
+SketchupRequirements:
+  Enabled: true
+
+SketchupSuggestions:
+  Enabled: true
