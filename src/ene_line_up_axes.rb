@@ -17,8 +17,7 @@ module LineUpAxes
     File.join(PLUGIN_DIR, "main")
   )
   EXTENSION.creator     = "Eneroth3"
-  EXTENSION.description =
-    "Line up group or component axes with that of parent drawing context."
+  EXTENSION.description = "Line up axes with that of parent drawing context."
   EXTENSION.version     = "1.0.0"
   EXTENSION.copyright   = "2018, #{EXTENSION.creator}"
   Sketchup.register_extension(EXTENSION, true)
