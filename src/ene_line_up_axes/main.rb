@@ -50,7 +50,7 @@ module LineUpAxes
     instances.each do |instance|
       LComponentDefinition.place_axes(
         LEntity.definition(instance),
-        instance.transformation.inverse * model.edit_transform
+        instance.transformation.inverse * model.axes.transformation
       )
     end
 
