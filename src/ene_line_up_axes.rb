@@ -16,10 +16,10 @@ module LineUpAxes
     "Eneroth Line Up Axes",
     File.join(PLUGIN_DIR, "main")
   )
-  EXTENSION.creator     = "Eneroth3"
+  EXTENSION.creator     = "Christina Eneroth"
   EXTENSION.description = "Line up axes with that of parent drawing context."
-  EXTENSION.version     = "1.0.0"
-  EXTENSION.copyright   = "2018, #{EXTENSION.creator}"
+  EXTENSION.version     = "1.0.1"
+  EXTENSION.copyright   = "2026, #{EXTENSION.creator}"
   Sketchup.register_extension(EXTENSION, true)
 
 end
